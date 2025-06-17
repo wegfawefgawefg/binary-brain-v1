@@ -5,6 +5,7 @@
 #include "reward_bus.hpp"
 #include "sensor_pool.hpp"
 #include "actuator_pool.hpp"
+#include "bb_types.hpp"
 
 namespace bb {
 class Network final {
@@ -28,7 +29,11 @@ private:
 
     // --- state ---
     std::vector<Neuron>         neurons_;
+    std::vector<weight_word_t>  weight_storage_;
+    std::vector<uint32_t>       usage_counters_;
     SynapseBlock                synapses_;
+    SensorPool                  sensors_;
+    ActuatorPool                actuators_;
     RewardBus                   reward_;
     float                       structural_timer_{0.f};
 };
