@@ -30,6 +30,7 @@ Network::Network(unsigned num_neurons)
     }
 }
 
+
 void Network::step(float dt_sec) {
     sense();
     compute_reward();
@@ -103,3 +104,4 @@ void Network::structural_pass_device() {
         usage_counters_[i] = 0;
     }
 }
+
