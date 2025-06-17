@@ -11,6 +11,6 @@ struct SynapseBlock final {
      * @param a Pointer to presynaptic packed activity.
      * @param out_accum Int32 accumulator in shared memory.
      */
-    __device__ void dot_xnor_popcount(const weight_word_t* a, int32_t* out_accum) const;
+    __host__ __device__ void dot_xnor_popcount(const weight_word_t* a, int32_t* out_accum) const;
 };
 } // namespace bb

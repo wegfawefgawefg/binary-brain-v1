@@ -11,6 +11,11 @@ add_library(bb_core STATIC
 
 target_include_directories(bb_core PUBLIC
     ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/cuda
 )
+
+if(BB_WITH_CUDA)
+    target_compile_definitions(bb_core PUBLIC BB_WITH_CUDA)
+endif()
 
 add_dependencies(bb_core bb_headers)

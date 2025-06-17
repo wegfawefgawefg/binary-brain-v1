@@ -8,4 +8,10 @@ namespace bb::kernels {
     __global__ void structural_pass(weight_word_t* synapse_words,
                                     uint32_t*      usage_counters,
                                     float          prune_threshold);
+#ifndef __CUDACC__
+    void structural_pass(weight_word_t* synapse_words,
+                         uint32_t*      usage_counters,
+                         float          prune_threshold,
+                         unsigned       word_count);
+#endif
 } // namespace bb::kernels

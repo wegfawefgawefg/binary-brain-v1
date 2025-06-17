@@ -28,7 +28,11 @@ private:
 
     // --- state ---
     std::vector<Neuron>         neurons_;
-    SynapseBlock                synapses_;
+    std::vector<weight_word_t>  weight_storage_;
+    SynapseBlock                synapses_{};
+    std::vector<uint32_t>       usage_counters_;
+    SensorPool                  sensors_;
+    ActuatorPool                actuators_;
     RewardBus                   reward_;
     float                       structural_timer_{0.f};
 };
